@@ -26,7 +26,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           rel="stylesheet"
         />
       </head>
-      <body>
+      <body suppressHydrationWarning={true}>
         <Navbar />
         <main className="p-6">{children}</main>
         <Footer />

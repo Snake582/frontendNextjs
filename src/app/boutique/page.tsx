@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 type Picture = {
   id: number
@@ -267,7 +267,6 @@ export default function Boutique() {
 
   const supprimerPanier = () => {
     setPanier([]);
-    alert("Souhaitez-vous vraiment vider le panier ?");
   }
 
   const validerPanier = () => {
@@ -278,8 +277,43 @@ export default function Boutique() {
   const total = panier.reduce((acc, item) => acc + item.produit.prix, 0)
 
   const produitsFiltres = Data.filter((produit) =>
-    produit.alt.toLowerCase().includes(recherche.toLowerCase())
+    produit.alt?.toLowerCase().includes(recherche.toLowerCase())
   )
+
+const ajouterProduit = async () => {
+  try {
+    const token = localStorage.getItem('token');
+
+    const response = await fetch('http://localhost:3000/product', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`
+      },
+      body: JSON.stringify(Data)
+    });
+
+    if (!response.ok) throw new Error("Erreur lors de l'ajout du produit");
+
+    const data = await response.json();
+    console.log("Produit ajouté avec succès:", data);
+
+    // Optionnel : recharger la liste de produits ici
+  } catch (error) {
+    console.error("Erreur:", error);
+  }
+};
+useEffect(() => {
+  const panierStorage = localStorage.getItem('panier');
+  if (panierStorage) {
+    setPanier(JSON.parse(panierStorage));
+  }
+}, []);
+
+useEffect(() => {
+  localStorage.setItem('panier', JSON.stringify(panier));
+}, [panier]);
+
 
   return (
     <div className="p-6">

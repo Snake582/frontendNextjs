@@ -1,10 +1,34 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
+
+type ConnectedUser = {
+  id: number
+  prenom: string
+  nom: string
+  email: string
+  role: string
+}
 
 const Navbar = () => {
   const [menuOuvert, setMenuOuvert] = useState(false)
+  const [connectedUser, setConnectedUser] = useState<ConnectedUser | null>(null)
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const user = localStorage.getItem('user')
+        if (user) {
+         try {
+          const parsedUser = JSON.parse(user) as ConnectedUser
+          setConnectedUser(parsedUser)
+        } catch (error) {
+        console.error("Erreur lors du parsing JSON:", error)
+  }
+}
+
+    }
+  }, [])
 
   return (
     <>
@@ -45,9 +69,15 @@ const Navbar = () => {
               <li><Link href="/contact" className="text-black font-semibold hover:text-blue-500">Contact</Link></li>
               <li><Link href="/about" className="text-black font-semibold hover:text-blue-500">À propos</Link></li>
             </ul>
-            <Link href="/connexion" className="text-black font-semibold flex items-center gap-1">
-              Se Connecter <i className="ri-user-fill hover:text-blue-500 text-2xl"></i>
-            </Link>
+            {connectedUser ? (
+              <Link href="/profil" className="text-black font-semibold flex items-center gap-1">
+                {connectedUser.prenom} <i className="ri-user-fill hover:text-blue-500 text-2xl"></i>
+              </Link>
+            ) : (
+              <Link href="/connexion" className="text-black font-semibold flex items-center gap-1">
+                Se Connecter <i className="ri-user-fill hover:text-blue-500 text-2xl"></i>
+              </Link>
+            )}
           </div>
         </div>
 
@@ -60,9 +90,15 @@ const Navbar = () => {
               <li><Link href="/contact" className="text-black font-medium hover:text-blue-500">Contact</Link></li>
               <li><Link href="/about" className="text-black font-medium hover:text-blue-500">À propos</Link></li>
             </ul>
-            <Link href="/connexion" className="block text-black font-medium hover:text-blue-500 pt-2">
-              <i className="ri-user-fill text-lg mr-1"></i> Se Connecter
-            </Link>
+            {connectedUser ? (
+              <Link href="/profil" className="text-black font-semibold flex items-center gap-1">
+                {connectedUser.prenom} <i className="ri-user-fill hover:text-blue-500 text-2xl"></i>
+              </Link>
+            ) : (
+              <Link href="/connexion" className="text-black font-semibold flex items-center gap-1">
+                Se Connecter <i className="ri-user-fill hover:text-blue-500 text-2xl"></i>
+              </Link>
+            )}
           </div>
         )}
       </nav>
