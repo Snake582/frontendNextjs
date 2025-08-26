@@ -20,6 +20,7 @@ type Picture = {
 
 interface formData {
   produit: Picture
+  quantity?: number
   couleur: string
   alt: string
   prix: number
@@ -28,31 +29,31 @@ interface formData {
 const Data: Picture[] = [
   {
     id: 1,
-    Image: "/Image/iphone-16-pink-128gb-back.jpg",
+    Image: "https://res.cloudinary.com/daqiiskbs/image/upload/v1756138151/iphone-16-pink-128gb-back_mzatea.jpg",
     alt: "iphone-16",
     prix: 500000,
     imagesSecondaires: [
-      "/Image/apple_iphone_16_verde_04_ad_l.jpg",
-      "/Image/iphone-16-white-128gb-back_3.jpg",
-      "/Image/iphone-16-black-128gb-back.jpg",
-      "/Image/iphone-16-pink-128gb-back.jpg",
-      "/Image/iphone-16 ultramarine.jpeg",
+      "https://res.cloudinary.com/daqiiskbs/image/upload/v1756138106/apple_iphone_16_verde_04_ad_l_gihzz1.jpg",
+      "https://res.cloudinary.com/daqiiskbs/image/upload/v1756138152/iphone-16-white-128gb-back_3_y58zug.jpg",
+      "https://res.cloudinary.com/daqiiskbs/image/upload/v1756138147/iphone-16-black-128gb-back_lx2dik.jpg",
+      "https://res.cloudinary.com/daqiiskbs/image/upload/v1756138151/iphone-16-pink-128gb-back_mzatea.jpg",
+      "https://res.cloudinary.com/daqiiskbs/image/upload/v1756138142/iphone-16_ultramarine_yx2bg3.jpg",
     ],
-    description: "iphone-16-pink 128GB",
+    description: "iphone-16-128GB",
     category: "Électronique",
     stock: 50,
     rating: { rate: 4.5, count: 120 }
   },
   {
     id: 2,
-    Image: "/Image/talon-femme.jpeg",
+    Image: "https://res.cloudinary.com/daqiiskbs/image/upload/v1756138225/talon-femme_gkakwx.jpg",
     alt: "Chaussure Femme",
     prix: 10000,
      imagesSecondaires: [
-      "/Image/talon-femme-side.jpeg",
-      "/Image/talon-femme-white.jpeg",
-      "/Image/talon-femme-left.jpeg",
-      "/Image/talon-femme.jpeg",
+      "https://res.cloudinary.com/daqiiskbs/image/upload/v1756138223/talon-femme-side_blhxzs.webp",
+      "https://res.cloudinary.com/daqiiskbs/image/upload/v1756138225/talon-femme-white_nmygjm.jpg",
+      "https://res.cloudinary.com/daqiiskbs/image/upload/v1756138222/talon-femme-left_i4xuty.webp",
+      "https://res.cloudinary.com/daqiiskbs/image/upload/v1756138225/talon-femme_gkakwx.jpg",
     ],
     description: "Taille 39-43",
     category: "Chaussures",
@@ -61,12 +62,12 @@ const Data: Picture[] = [
   },
   {
     id: 3,
-    Image: "/Image/jewelry.jpg",
+    Image: "https://res.cloudinary.com/daqiiskbs/image/upload/v1756138165/jewelry_chpaf2.jpg",
     alt: "Collier en or",
     imagesSecondaires: [
-      "/Image/jewelry-2.jpg",
-      "/Image/jewelry-4.jpg",
-      "/Image/jewelry.jpg",
+      "https://res.cloudinary.com/daqiiskbs/image/upload/v1756138153/jewelry-2_f8sqvu.jpg",
+      "https://res.cloudinary.com/daqiiskbs/image/upload/v1756138153/jewelry-4_ne17w9.jpg",
+      "https://res.cloudinary.com/daqiiskbs/image/upload/v1756138165/jewelry_chpaf2.jpg",
     ],
     prix: 90000,
     description: "Collier en or 18 carats",
@@ -79,14 +80,14 @@ const Data: Picture[] = [
   },
   {
     id: 4,
-    Image: "/Image/Rolex for men.jpg",
+    Image: "https://res.cloudinary.com/daqiiskbs/image/upload/v1756138194/Rolex_for_men_qckd59.jpg",
     alt: "Montre Rolex pour homme",
     prix: 100000,
     imagesSecondaires: [
-      "/Image/Rolex for men-2.jpg",
-      "/Image/Rolex for men-3.jpg",
-      "/Image/Rolex for men-4.jpg",
-      "/Image/Rolex for men.jpg",
+      "https://res.cloudinary.com/daqiiskbs/image/upload/v1756138185/Rolex_for_men-2_udywtz.jpg",
+      "https://res.cloudinary.com/daqiiskbs/image/upload/v1756138189/Rolex_for_men-3_o3ba2l.jpg",
+      "https://res.cloudinary.com/daqiiskbs/image/upload/v1756138189/Rolex_for_men-4_aqmwc7.webp",
+      "https://res.cloudinary.com/daqiiskbs/image/upload/v1756138194/Rolex_for_men_qckd59.jpg",
     ],
     description: "Rolex homme en acier inoxydable",
     category: "Montres",
@@ -98,15 +99,15 @@ const Data: Picture[] = [
   },
   {
     id: 5,
-    Image: "/Image/lacoste.webp",
+    Image: "https://res.cloudinary.com/daqiiskbs/image/upload/v1756138167/lacoste_avgkfi.webp",
     alt: "Lacoste T-shirt",
     prix: 5000,
     imagesSecondaires: [
-      "/Image/lacoste-2.webp",
-      "/Image/lacoste-3.webp",
-      "/Image/lacoste-4.webp",
-      "/Image/lacoste-5.webp",
-      "/Image/lacoste.webp",
+      "https://res.cloudinary.com/daqiiskbs/image/upload/v1756138164/lacoste-2_fc7ag8.avif",
+      "https://res.cloudinary.com/daqiiskbs/image/upload/v1756138159/lacoste-3_y8exz4.webp",
+      "https://res.cloudinary.com/daqiiskbs/image/upload/v1756138165/lacoste-4_wao5ab.webp",
+      "https://res.cloudinary.com/daqiiskbs/image/upload/v1756138165/lacoste-5_bo5zlf.webp",
+      "https://res.cloudinary.com/daqiiskbs/image/upload/v1756138167/lacoste_avgkfi.webp",
     ],
     description: "T-shirt Lacoste en coton bio",
     category: "Vêtements",
@@ -118,12 +119,12 @@ const Data: Picture[] = [
   },
    {
     id: 6,
-    Image: "/Image/clim.jpg",
+    Image: "https://res.cloudinary.com/daqiiskbs/image/upload/v1756138152/clim_f4ajws.jpg",
     alt: "Climatiseur",
     prix: 90000,
     imagesSecondaires: [
-      "/Image/clim-2.jpg",
-      "/Image/clim.jpg"
+      "https://res.cloudinary.com/daqiiskbs/image/upload/v1756138168/clim-2_wgtb7u.jpg",
+      "https://res.cloudinary.com/daqiiskbs/image/upload/v1756138152/clim_f4ajws.jpg"
     ],
     description: "Climatiseur 12000 BTU",
     category: "Électroménager",
@@ -135,14 +136,14 @@ const Data: Picture[] = [
   },
   {
     id: 7,
-    Image: "/Image/black-bag-with-scarf.jpg",
+    Image: "https://res.cloudinary.com/daqiiskbs/image/upload/v1756138151/black-bag-with-scarf_narfrc.jpg",
     alt: "Sac à main avec écharpe",
     prix: 15000,
      imagesSecondaires: [
-      "/Image/white-bag-with-scarf.jpg",
-      "/Image/red-bag-with-scarf.jpg",
-      "/Image/pink-bag-with-scarf.jpg",
-      "/Image/black-bag-with-scarf.jpg",
+      "https://res.cloudinary.com/daqiiskbs/image/upload/v1756138245/white-bag-with-scarf_lszmht.jpg",
+      "https://res.cloudinary.com/daqiiskbs/image/upload/v1756138175/red-bag-with-scarf_mtjpea.avif",
+      "https://res.cloudinary.com/daqiiskbs/image/upload/v1756138172/pink-bag-with-scarf_s3koad.webp",
+      "https://res.cloudinary.com/daqiiskbs/image/upload/v1756138151/black-bag-with-scarf_narfrc.jpg",
     ],
     description: "Sac à main élégant en cuir",
     category: "Accessoires",
@@ -154,13 +155,13 @@ const Data: Picture[] = [
   },
   {
     id: 8,
-    Image: "/Image/view-3d-school-backpack.jpg",
+    Image: "https://res.cloudinary.com/daqiiskbs/image/upload/v1756138240/view-3d-school-backpack_wvt5e4.jpg",
     alt: "Sac à dos scolaire",
     imagesSecondaires: [
-      "/Image/view-3d-school-backpack-marron.jpg",
-      "/Image/view-3d-school-backpack-yellow.jpg",
-      "/Image/view-3d-school-backpack-marronpink.jpg",
-      "/Image/view-3d-school-backpack.jpg",
+      "https://res.cloudinary.com/daqiiskbs/image/upload/v1756138227/view-3d-school-backpack-marron_cv9swh.avif",
+      "https://res.cloudinary.com/daqiiskbs/image/upload/v1756138229/view-3d-school-backpack-yellow_meddfp.jpg",
+      "https://res.cloudinary.com/daqiiskbs/image/upload/v1756138227/view-3d-school-backpack-marronpink_x6ymor.avif",
+      "https://res.cloudinary.com/daqiiskbs/image/upload/v1756138240/view-3d-school-backpack_wvt5e4.jpg",
     ],
     prix: 8000,
     description: "Sac à dos scolaire en tissu imperméable",
@@ -173,14 +174,14 @@ const Data: Picture[] = [
   },
   {
     id: 9,
-    Image: "/Image/Macbook pro 14.jpeg",
+    Image: "https://res.cloudinary.com/daqiiskbs/image/upload/v1756138174/Macbook_pro_14_x9adr4.jpg",
     alt: "Macbook Pro 14",
     prix: 290000,
     imagesSecondaires: [
-      "/Image/Macbook pro 14-2.jpeg",
-      "/Image/Macbook pro 14-white.jpeg",
-      "/Image/Macbook pro 14-4.jpeg",
-      "/Image/Macbook pro 14.jpeg",
+      "https://res.cloudinary.com/daqiiskbs/image/upload/v1756138167/Macbook_pro_14-2_q48n3k.jpg",
+      "https://res.cloudinary.com/daqiiskbs/image/upload/v1756138168/Macbook_pro_14-white_xjhebr.webp",
+      "https://res.cloudinary.com/daqiiskbs/image/upload/v1756138167/Macbook_pro_14-4_drm9vv.jpg",
+      "https://res.cloudinary.com/daqiiskbs/image/upload/v1756138174/Macbook_pro_14_x9adr4.jpg",
     ],
     description: "Macbook Pro 14 pouces avec M1 Pro",
     category: "Électronique",
@@ -192,14 +193,14 @@ const Data: Picture[] = [
   },
   {
     id: 10,
-    Image: "/Image/stove.jpg",
+    Image: "https://res.cloudinary.com/daqiiskbs/image/upload/v1756138221/stove_vt0nfi.jpg",
     alt: "Cuisinière à gaz",
     prix: 80000,
     imagesSecondaires: [
-      "/Image/stove-2.jpg",
-      "/Image/stove-3.jpg",
-      "/Image/stove-4.jpg",
-      "/Image/stove.jpg",
+      "https://res.cloudinary.com/daqiiskbs/image/upload/v1756138192/stove-2_nyrcu1.jpg",
+      "https://res.cloudinary.com/daqiiskbs/image/upload/v1756138195/stove-3_xilmqw.png",
+      "https://res.cloudinary.com/daqiiskbs/image/upload/v1756138197/stove-4_npd66n.webp",
+      "https://res.cloudinary.com/daqiiskbs/image/upload/v1756138221/stove_vt0nfi.jpg",
     ],
     description: "Cuisinière à gaz 4 feux",
     category: "Électroménager",
@@ -211,14 +212,14 @@ const Data: Picture[] = [
   },
   {
     id: 11,
-    Image: "/Image/Pink-dress.jpeg",
+    Image: "https://res.cloudinary.com/daqiiskbs/image/upload/v1756138174/Pink-dress_xc4ouq.jpg",
     alt: "Robe Enfant",
     prix: 6000,
     imagesSecondaires: [
-      "/Image/Blue-dress.jpeg",
-      "/Image/Floral-dress.jpeg",
-      "/Image/White-dress.jpeg",
-      "/Image/Pink-dress.jpeg",
+      "https://res.cloudinary.com/daqiiskbs/image/upload/v1756138106/Blue-dress_xilevp.jpg",
+      "https://res.cloudinary.com/daqiiskbs/image/upload/v1756138113/Floral-dress_qy2efg.jpg",
+      "https://res.cloudinary.com/daqiiskbs/image/upload/v1756138246/White-dress_geuloh.jpg",
+      "https://res.cloudinary.com/daqiiskbs/image/upload/v1756138174/Pink-dress_xc4ouq.jpg",
     ],
     description: "Robe pour fille en coton",
     category: "Vêtements",
@@ -230,14 +231,14 @@ const Data: Picture[] = [
   },
   {
     id: 12,
-    Image: "/Image/PAW-PATROL-T-Shirt-Girl-Children.webp",
+    Image: "https://res.cloudinary.com/daqiiskbs/image/upload/v1756138171/PAW-PATROL-T-Shirt-Girl-Children_akjpxw.webp",
     alt: "T-shirt Enfant",
     prix: 3000,
     imagesSecondaires: [
-      "/Image/p patrol.jpg",
-      "/Image/p.jpg",
-      "/Image/PAW-PATROL-T-Shirt-Children.webp",
-      "/Image/PAW-PATROL-T-Shirt-Girl-Children.webp",
+      "https://res.cloudinary.com/daqiiskbs/image/upload/v1756138173/p_patrol_ax22mb.jpg",
+      "https://res.cloudinary.com/daqiiskbs/image/upload/v1756138169/p_gfhuzz.jpg",
+      "https://res.cloudinary.com/daqiiskbs/image/upload/v1756138174/PAW-PATROL-T-Shirt-Children_fppinm.webp",
+      "https://res.cloudinary.com/daqiiskbs/image/upload/v1756138171/PAW-PATROL-T-Shirt-Girl-Children_akjpxw.webp",
     ],
     description: "T-shirt enfant avec motif Paw Patrol",
     category: "Vêtements",
@@ -253,10 +254,43 @@ export default function Boutique() {
   const [recherche, setRecherche] = useState('')
   const [panier, setPanier] = useState<formData[]>([])
   const [imagesPrincipales, setImagesPrincipales] = useState<{ [id: number]: string }>({})
+  const [isAdmin, setIsAdmin] = useState(false)
 
-  const ajouterAuPanier = (produit: formData,) => {
-    console.log("Produit ajouté au panier:", produit)
-    setPanier((prev) => [...prev, produit,])
+  const [isConnected, setIsConnected] = useState(false)
+
+    useEffect(() => {
+    const token = localStorage.getItem('token')
+    if (token) {
+      try {
+        const payload = JSON.parse(atob(token.split('.')[1]))
+        setIsAdmin(payload.role === 'admin')
+      } catch (err) {
+        console.error("Erreur décodage token:", err)
+        setIsAdmin(false)
+      }
+    }
+  }, [])
+
+    useEffect(() => {
+    const token = localStorage.getItem('token')
+    setIsConnected(!!token)
+
+    const panierStorage = localStorage.getItem('panier')
+    if (panierStorage) setPanier(JSON.parse(panierStorage))
+  }, [])
+
+  const ajouterAuPanier = (item: formData) => {
+    setPanier((prev) => {
+      const existe = prev.find((p) => p.produit.id === item.produit.id)
+      if (existe) {
+        return prev.map((p) =>
+          p.produit.id === item.produit.id
+            ? { ...p, quantity: (p.quantity ?? 1) + 1 }
+            : p
+        )
+      }
+      return [...prev, { ...item, quantity: 1 }]
+    })
   }
 
   const supprimerDuPanier = (index: number) => {
@@ -269,40 +303,93 @@ export default function Boutique() {
     setPanier([]);
   }
 
-  const validerPanier = () => {
-    setPanier([]);
-    alert("Merci pour votre commande !");
-  }
-
-  const total = panier.reduce((acc, item) => acc + item.produit.prix, 0)
+  const total = panier.reduce(
+  (acc, item) => acc + item.prix * (item.quantity ?? 1),
+  0
+)
 
   const produitsFiltres = Data.filter((produit) =>
     produit.alt?.toLowerCase().includes(recherche.toLowerCase())
   )
 
-const ajouterProduit = async () => {
+const validerPanier = async () => {
+  try {
+    const token = localStorage.getItem("token");
+    if (!token) {
+      throw new Error("Utilisateur non connecté");
+    }
+
+    if (panier.length === 0) throw new Error("Panier vide");
+
+    const total = panier.reduce(
+      (acc, item) => acc + item.prix * (item.quantity ?? 1),
+      0
+    );
+
+    const response = await fetch("http://localhost:3000/order", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify({
+        items: panier.map((item) => ({
+          productId: item.produit.id,
+          quantity: item.quantity ?? 1, // 👈 obligatoire
+          price: item.prix,
+          image: item.produit.Image,
+        })),
+        total, // 👈 obligatoire
+      }),
+    });
+
+    if (!response.ok) {
+      const err = await response.json();
+      console.error("Erreur backend:", err);
+      throw new Error("Erreur lors de la commande");
+    }
+
+    alert("Commande validée avec succès !");
+    setPanier([]);
+    localStorage.removeItem("panier");
+  } catch (error) {
+    console.error("Erreur:", error);
+    alert(error instanceof Error ? error.message : "Erreur inconnue");
+  }
+};
+
+const ajouterProduit = async (produit: Picture) => {
   try {
     const token = localStorage.getItem('token');
-
     const response = await fetch('http://localhost:3000/product', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        Authorization: `Bearer ${token}`
+        Authorization: `Bearer ${token}`,
       },
-      body: JSON.stringify(Data)
+      body: JSON.stringify({
+  alt: produit.alt,                  // string
+  description: produit.description,  // string
+  prix: Number(produit.prix),        // number
+  stock: Number(produit.stock),      // number
+  category: produit.category || '',  // string optionnel
+  Image: produit.Image || '',        // string optionnel
+  imagesSecondaires: produit.imagesSecondaires || [], // tableau optionnel
+})
+
     });
 
     if (!response.ok) throw new Error("Erreur lors de l'ajout du produit");
 
     const data = await response.json();
-    console.log("Produit ajouté avec succès:", data);
-
-    // Optionnel : recharger la liste de produits ici
+    console.log("Produit ajouté:", data);
+    alert("Produit ajouté avec succès !");
   } catch (error) {
     console.error("Erreur:", error);
+    alert("Erreur lors de l'ajout du produit");
   }
 };
+
 useEffect(() => {
   const panierStorage = localStorage.getItem('panier');
   if (panierStorage) {
@@ -346,6 +433,9 @@ useEffect(() => {
                         src={imagePrincipale}
                         alt={produit.alt}
                         fill
+                        unoptimized
+                        priority
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px"
                         className="object-contain"
                       />
                     </div>
@@ -369,6 +459,9 @@ useEffect(() => {
                               alt={`Vue ${i}`}
                               width={42}
                               height={42}
+                              unoptimized
+                              priority
+                              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px"
                               className="object-cover w-full h-full"
                             />
                           </div>
@@ -378,33 +471,48 @@ useEffect(() => {
                   </div>
 
           <div className="p-4 space-y-2">
-       <h2 className="text-xl font-semibold">{produit.alt}</h2>
-         <p className="text-green-600 font-bold text-lg">{produit.prix.toLocaleString()} CFA</p>
+  <h2 className="text-xl font-semibold">{produit.alt}</h2>
+  <p className="text-green-600 font-bold text-lg">{produit.prix.toLocaleString()} CFA</p>
 
-         <p className="text-sm text-gray-700">
-          <span className="font-semibold">Description:</span> {produit.description}
-         </p>
-         <p className="text-sm text-gray-700">
-          <span className="font-semibold">Catégorie:</span> {produit.category}
-         </p>
-         <p className="text-sm text-gray-700">
-           <span className="font-semibold">Stock:</span> {produit.stock}
-         </p>
-             <p className="text-sm text-gray-700">
-               <span className="font-semibold">Avis:</span> {produit.rating?.rate} ⭐ ({produit.rating?.count} votes)
-              </p>
-              <button
-                 onClick={() => 
-                   ajouterAuPanier({
-                   produit,
-                   couleur: imagePrincipale,
-                   alt: produit.alt,
-                   prix: produit.prix,
-                 }) 
-                }
-               className="mt-2 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Ajouter au panier
-              </button>
-              </div>
+  <p className="text-sm text-gray-700">
+    <span className="font-semibold">Description:</span> {produit.description}
+  </p>
+  <p className="text-sm text-gray-700">
+    <span className="font-semibold">Catégorie:</span> {produit.category}
+  </p>
+  <p className="text-sm text-gray-700">
+    <span className="font-semibold">Stock:</span> {produit.stock}
+  </p>
+  <p className="text-sm text-gray-700">
+    <span className="font-semibold">Avis:</span> {produit.rating?.rate} ⭐ ({produit.rating?.count} votes)
+  </p>
+
+  {/* Bouton Ajouter au panier */}
+  <button
+    onClick={() =>
+      ajouterAuPanier({
+        produit,
+        couleur: imagePrincipale,
+        alt: produit.alt,
+        prix: produit.prix,
+      })
+    }
+    className="mt-2 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+  >
+    Ajouter au panier
+  </button>
+
+  {/* Bouton Ajouter au backend */}
+  {isAdmin && (
+    <div className="mt-2">
+  <button
+    onClick={() => ajouterProduit(produit)}
+    className="mt-2 px-4 py-2 bg-purple-600 text-white rounded hover:bg-purple-700"
+  >
+    Ajouter au backend
+  </button>
+  </div>)}
+</div>
                 </div>
               )
             })
@@ -424,7 +532,32 @@ useEffect(() => {
             <li key={index} className="flex justify-between items-center p-2">
               <div>
                 <p className="font-medium">{item.alt}</p>
-                <p className="text-sm text-gray-600">{item.prix} CFA</p>
+                <p className="text-sm text-gray-600">{item.prix.toLocaleString()} CFA x {item.quantity}</p>
+              </div>
+              <div className="flex items-center gap-2">
+             <button
+               onClick={() =>
+               setPanier((prev) =>
+               prev.map((p, i) =>
+                 i === index
+                  ? { ...p, quantity: Math.max((p.quantity ?? 1) - 1, 1) }
+                  : p
+              ))}
+            className="px-1 py-1 bg-gray-200 rounded hover:bg-red-400">
+        ➖</button>
+
+            <span>{item.quantity}</span>
+
+            <button
+               onClick={() =>
+               setPanier((prev) =>
+               prev.map((p, i) =>
+                 i === index
+                  ? { ...p, quantity: (p.quantity ?? 1) + 1 }
+                  : p
+            ))}
+           className="px-1 py-1 bg-gray-200 rounded hover:bg-green-400"> ➕
+            </button>
               </div>
               <button
                 onClick={() => supprimerDuPanier(index)}

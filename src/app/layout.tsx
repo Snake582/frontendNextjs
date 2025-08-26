@@ -4,7 +4,6 @@ import { ReactNode } from "react";
 import Navbar from "./Components/Navbar/Navbar";
 import Footer from "./Components/Footer/Footer";
 
-
 export const metadata: Metadata = {
   title: "Boutique",
   description: "A modern e-commerce platform",
@@ -13,7 +12,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
-        <head>
+      <head>
         {/* Remix Icon */}
         <link
           href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
@@ -27,10 +26,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         />
       </head>
       <body suppressHydrationWarning={true}>
-        <Navbar />
-        <main className="p-6">{children}</main>
-        <Footer />
+          <Navbar />
+          <main className="p-6">{children}</main>
+          <Footer />
       </body>
     </html>
-  )
+  );
 }
